@@ -261,6 +261,8 @@ cfg_if! {
                 #[path = "dummy.rs"] mod imp;
             }
         }
+    } else if #[cfg(feature = "stm32")] {
+        #[path = "stm32.rs"] mod imp;
     } else if #[cfg(feature = "dummy")] {
         #[path = "dummy.rs"] mod imp;
     } else {

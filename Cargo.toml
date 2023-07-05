@@ -46,3 +46,5 @@ dummy = []
 rustc-dep-of-std = ["compiler_builtins", "core"]
 # Unstable feature for testing
 test-in-browser = ["wasm-bindgen"]
+# feature to link with STM32 HAL RNG
+stm32 = []
