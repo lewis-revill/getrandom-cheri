@@ -6,16 +6,13 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-//! Implementation for FreeRTOS
+//! Implementation for embedded STM32 devices (possibly with an RTOS)
 use crate::Error;
-use core::ffi::{c_void, c_uint};
+use core::ffi::{c_uint, c_void};
 
 extern "C" {
     // STM32 HAL Random number generator function
-    pub fn HAL_RNG_GenerateRandomNumber(
-        phrng: &c_void,
-        p_random_number: *mut c_uint,
-    );
+    pub fn HAL_RNG_GenerateRandomNumber(phrng: &c_void, p_random_number: *mut c_uint);
 
     // STM32 HAL RNG handle
     static hrng: c_void;
