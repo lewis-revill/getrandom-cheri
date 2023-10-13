@@ -100,7 +100,7 @@ impl Weak {
 }
 
 cfg_if! {
-    if #[cfg(any(target_os = "linux", target_os = "emscripten"))] {
+    if #[cfg(all(not(target_env = "musl"), any(target_os = "linux", target_os = "emscripten")))] {
         use libc::open64 as open;
     } else {
         use libc::open;
